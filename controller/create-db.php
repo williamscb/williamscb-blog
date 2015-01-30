@@ -6,7 +6,7 @@
     // Connects you to mysqli and gives you the host, username, and password
 
     if($connection->connect_error){
-       die("Error: ". $connection->connect_error); 
+       die("<p>Error: ". $connection->connect_error . "</p>"); 
        //If the program has a connection error the program will die
     }
     
@@ -16,11 +16,11 @@
       $query = $connection->query("CREATE DATABASE $database");
       
       if($query) {
-          echo "Successfully created database" . $database;
+          echo "<p>Successfully created database" . $database ."</p>";
       }
     }
     else {
-        echo "Database has already exists.";
+        echo "<p>Database has already exists</p>.";
     }
     
     $query = $connection->query("CREATE TABLE posts ("
@@ -31,8 +31,10 @@
     // Creates a query that creates a table that needs to have an id,title, and post
     
     if($query){
-        echo "Successfully created table: posts";
+        echo "<p>Successfully created table: posts</p>";
     }
-   
+    else{
+        echo "<p>$connection->error</p>";
+    }
     
     $connection->close();
