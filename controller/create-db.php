@@ -1,5 +1,5 @@
 <?php
-    require_once(__DIR__ ."/../model/database.php");
+    require_once(__DIR__ ."/../model/config.php");
     //__DIR__. fixes the messed up path on our php file.
 
     $connection= new mysqli($host, $username, $password);
