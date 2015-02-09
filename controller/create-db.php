@@ -2,9 +2,6 @@
     require_once(__DIR__ ."/../model/config.php");
     //__DIR__. fixes the messed up path on our php file.
 
-    $connection= new mysqli($host, $username, $password);
-    // Connects you to mysqli and gives you the host, username, and password
-
     if($connection->connect_error){
        die("<p>Error: ". $connection->connect_error . "</p>"); 
        //If the program has a connection error the program will die
