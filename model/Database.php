@@ -17,10 +17,11 @@ class Database {
     public function openConnection(){
        $this->connection = new mysqli($this->host, $this->username, $this->password, $this->database);
        
-       if ($connection->connect_error) {
+       if ($this->connection->connect_error) {
             die("<p>Error: " . $this->connection->connect_error . "</p>");
             //If the program has a connection error the program will die
         }
+        
     }
     
     public function closeConnection(){
